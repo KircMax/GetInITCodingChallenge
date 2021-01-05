@@ -4,9 +4,15 @@ using System.IO;
 using Newtonsoft.Json;
 using System.Linq;
 
+/**
+ * Author:    Max Kirchberger
+ * Created:   05.01.2021
+ * **/
+
 namespace GetInITCodingChallenge
 {
-    class Program
+    
+    public class Program
     {
         public static DirectoryInfo CurrentExeDir
         {
@@ -17,7 +23,11 @@ namespace GetInITCodingChallenge
             }
         }
 
-
+        /// <summary>
+        /// I know the algorithm is not yet perfect since the transporters are not (yet) perfectly filled with low-weight but for this scenario this was by far not necessary
+        /// and would only complicate the program.
+        /// </summary>
+        /// <param name="args"></param>
         static void Main(string[] args)
         {
             string HwNeededPath = Path.Combine(CurrentExeDir.FullName, "HWNeeded");
@@ -99,7 +109,7 @@ namespace GetInITCodingChallenge
                     }
                     else
                     {
-                        // does not fit into transporter anymore - maybe we could still add something that has the next biggest utilityperKilogram but weighs less
+                        // does not fit into transporter anymore - maybe we could still add something that has the next biggest utilityperKilogram but weighs less - there for just break and not return
                         break;
                     }
                 }
