@@ -63,7 +63,7 @@ namespace GetInITCodingChallenge
         }
         public void WriteTransporterContent()
         {
-            Console.WriteLine($"Transporter with Capacity: {Capacity} is filled with driver that weighs: {driver.Weight} and with hardware up to Weight:{ContentWeight} with the following content:");
+            Console.WriteLine($"Transporter with Capacity: {Capacity+Environment.NewLine}is filled with driver that weighs: {driver.Weight + Environment.NewLine}and with hardware (+driver) up to Weight:{ContentWeight + Environment.NewLine}bringing in Utility: {UtilityTransporting + Environment.NewLine}with the following content:");
             List<string> hwNames = new List<string>();
             foreach(var unit in this.hardwareTransporting)
             {
